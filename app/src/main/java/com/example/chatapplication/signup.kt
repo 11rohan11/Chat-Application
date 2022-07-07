@@ -8,6 +8,8 @@ import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 
+
+
 class signup : AppCompatActivity() {
 
     private lateinit var editname: EditText
@@ -16,7 +18,8 @@ class signup : AppCompatActivity() {
     private lateinit var btnsignup: Button
     private lateinit var mAuth: FirebaseAuth
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+
+     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup)
 
@@ -26,12 +29,13 @@ class signup : AppCompatActivity() {
         editpassword = findViewById(R.id.edt_Password)
         btnsignup = findViewById(R.id.S_button)
 
-        btnsignup.setOnClickListener{
+        btnsignup.setOnClickListener {
+            val name = editname.text.toString()
             val email = editemail.text.toString()
             val password = editpassword.text.toString()
+
             mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    Toast.makeText(this , "run" , Toast.LENGTH_LONG)
                     val intent = Intent(this , MainActivity::class.java)
                     startActivity(intent)
                     finish()
@@ -42,6 +46,6 @@ class signup : AppCompatActivity() {
                 }
             }
         }
+     }
 
-    }
 }
