@@ -7,7 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
-
+import com.google.firebase.database.FirebaseDatabase
 
 
 class signup : AppCompatActivity() {
@@ -17,25 +17,30 @@ class signup : AppCompatActivity() {
     private lateinit var editpassword: EditText
     private lateinit var btnsignup: Button
     private lateinit var mAuth: FirebaseAuth
+    private lateinit var databse : FirebaseDatabase
 
 
      override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup)
 
-        mAuth = FirebaseAuth.getInstance()
-        editname = findViewById(R.id.edt_name)
-        editemail = findViewById(R.id.edt_Email)
-        editpassword = findViewById(R.id.edt_Password)
-        btnsignup = findViewById(R.id.S_button)
+         databse = FirebaseDatabase.getInstance()
+         mAuth = FirebaseAuth.getInstance()
+         editname = findViewById(R.id.edt_name)
+         editemail = findViewById(R.id.edt_Email)
+         editpassword = findViewById(R.id.edt_Password)
+         btnsignup = findViewById(R.id.S_button)
 
-        btnsignup.setOnClickListener {
+         btnsignup.setOnClickListener {
             val name = editname.text.toString()
             val email = editemail.text.toString()
             val password = editpassword.text.toString()
+             val uid = mAuth.currentUser?.uid!!
 
             mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
+
+                    databse.getReference().child("user").child(uid).setValue(user(name,email,uid))
                     val intent = Intent(this , MainActivity::class.java)
                     startActivity(intent)
                     finish()
