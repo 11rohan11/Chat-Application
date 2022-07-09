@@ -8,9 +8,8 @@
 
     <EditText
         android:id="@+id/edt_Email"
-        android:layout_width="400dp"
+        android:layout_width="350dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="12dp"
         android:autofillHints=""
         android:background="@drawable/edt_background"
         android:ems="10"
@@ -20,15 +19,14 @@
         android:padding="10dp"
         app:layout_constraintBottom_toTopOf="@+id/edt_Password"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints,TextFields" />
 
     <EditText
         android:id="@+id/edt_Password"
-        android:layout_width="400dp"
+        android:layout_width="350dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="96dp"
+        android:layout_marginBottom="64dp"
         android:autofillHints=""
         android:background="@drawable/edt_background"
         android:ems="10"
@@ -38,22 +36,20 @@
         android:padding="10dp"
         app:layout_constraintBottom_toTopOf="@+id/l_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/l_button"
-        android:layout_width="100dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="12dp"
         android:background="@drawable/btn_background"
         android:text="@string/log_in"
         android:textColor="@color/white"
         android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@+id/S_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -61,29 +57,28 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
 
-        android:layout_marginBottom="124dp"
+        android:layout_marginBottom="196dp"
         android:background="@drawable/btn_background"
         android:text="@string/sign_up"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="200dp"
+        android:layout_width="150dp"
         android:layout_height="150dp"
         android:background="@drawable/edt_background"
+        android:contentDescription="@string/todo"
         android:padding="20dp"
         app:layout_constraintBottom_toTopOf="@+id/edt_Email"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.438"
         app:srcCompat="@drawable/ll"
-        android:contentDescription="@string/todo"
         tools:ignore="ContentDescription" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

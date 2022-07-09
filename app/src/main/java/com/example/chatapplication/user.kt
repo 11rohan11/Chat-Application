@@ -1,7 +1,5 @@
 package com.example.chatapplication
 
-import android.provider.ContactsContract
-
 class user {
 
     var name : String? = null

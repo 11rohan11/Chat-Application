@@ -28,8 +28,8 @@ class loginActivity : AppCompatActivity() {
 
         btnsignup.setOnClickListener{
             val intent = Intent(this,signup::class.java)
-            startActivity(intent)
             finish()
+            startActivity(intent)
         }
 
         btnlogin.setOnClickListener{
