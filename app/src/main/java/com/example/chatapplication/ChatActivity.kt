@@ -50,7 +50,6 @@ class ChatActivity : AppCompatActivity() {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     messagelist.clear()
                     for (postSnapshot in snapshot.children){
-
                         val message = postSnapshot.getValue(Message::class.java)
                         messagelist.add(message!!)
                     }
