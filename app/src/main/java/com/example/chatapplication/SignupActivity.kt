@@ -22,6 +22,7 @@ class SignupActivity : AppCompatActivity() {
      override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup)
+
         databse = FirebaseDatabase.getInstance().getReference()
         mAuth = FirebaseAuth.getInstance()
         editname = findViewById(R.id.edt_name)
